@@ -68,6 +68,8 @@ php artisan migrate
 php artisan queue:work
 
 ```
+---
+
 ##▶️ Running the Project
 ```bash
 #Start Laravel server
@@ -77,11 +79,15 @@ php artisan queue:work
 #🧪 Running Tests
 php artisan test
 ```
+---
+
 ##Automated tests included for:
 -Parallel hold creation (no oversell)
 -Hold expiry restores stock
 -Webhook idempotency
 -Webhook arriving before order creation
+
+---
 
 ##🧩 Assumptions:
 -Only one product exists in the system (seeded).
