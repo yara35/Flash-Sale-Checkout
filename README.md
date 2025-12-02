@@ -70,7 +70,7 @@ php artisan queue:work
 ```
 ---
 
-##▶️ Running the Project
+## ▶️ Running the Project
 ```bash
 #Start Laravel server
 php artisan serve
@@ -81,16 +81,16 @@ php artisan test
 ```
 ---
 
-##Automated tests included for:
--Parallel hold creation (no oversell)
--Hold expiry restores stock
--Webhook idempotency
--Webhook arriving before order creation
+## Automated tests included for:
+- Parallel hold creation (no oversell)
+- Hold expiry restores stock
+- Webhook idempotency
+- Webhook arriving before order creation
 
 ---
 
-##🧩 Assumptions:
--Only one product exists in the system (seeded).
+## 🧩 Assumptions:
+- Only one product exists in the system (seeded).
 -Stock availability = initial_stock – active_holds – paid_orders
 -Hold lifetime = 2 minutes.
 -All external payment providers send:
