@@ -57,8 +57,7 @@ composer install
 cp .env.example .env
 
 # Configure database in .env
-php artisan key:generate
-php artisan migrate --seed
+php artisan migrate
 
 # Configure queue driver
 QUEUE_CONNECTION=database
@@ -67,3 +66,28 @@ php artisan migrate
 
 # Start queue worker
 php artisan queue:work
+
+```
+##▶️ Running the Project
+```bash
+#Start Laravel server
+php artisan serve
+#Start queue worker
+php artisan queue:work
+#🧪 Running Tests
+php artisan test
+```
+##Automated tests included for:
+-Parallel hold creation (no oversell)
+-Hold expiry restores stock
+-Webhook idempotency
+-Webhook arriving before order creation
+
+##🧩 Assumptions:
+-Only one product exists in the system (seeded).
+-Stock availability = initial_stock – active_holds – paid_orders
+-Hold lifetime = 2 minutes.
+-All external payment providers send:
+idempotency_key
+order_id
+status: success|failed
